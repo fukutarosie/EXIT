@@ -25,6 +25,8 @@ exit_button = button.Button(630, 175, exit, 1.5)
 def main():
     run = True
     while run:
+        pos = pygame.mouse.get_pos()
+        
         background_img.draw(BG)
         word_img.draw(BG)
         if exit_button.draw(BG):
