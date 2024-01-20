@@ -18,7 +18,7 @@ background_img = images.Images(0, 0, background, 0.8)
 word_img = images.Images(200, 40, word, 1.3)
 
 #images
-exit_button = button.Button(620, 150, exit, 1.5)
+exit_button = button.Button(630, 175, exit, 1.5)
 
 #main
 def main():
