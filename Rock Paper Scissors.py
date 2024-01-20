@@ -6,7 +6,7 @@ pygame.init()
 screen = pygame.display.Info()
 sw, sh = screen.current_w, screen.current_h
 window = pygame.display.set_mode((sw, sh))
-pygame.display.set_caption("Rock Paper Scissors")
+
 
 
 background = pygame.transform.scale(pygame.image.load("assets/background.png"),(sw, sh))
