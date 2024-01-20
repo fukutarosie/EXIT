@@ -10,6 +10,7 @@ BG = pygame.display.set_mode((1536, 864))
 #time
 countdown = 10000
 
+
 #image load
 background = pygame.image.load("assets/Background.png").convert_alpha()
 exit = pygame.image.load("assets/exit.png").convert_alpha()
@@ -30,13 +31,18 @@ exit_button = button.Button(630, 175, exit, 1.5)
 replay_win_button = button.Button(600, 550, replay_win, 0.8)
 restart_lose_button = button.Button(490, 715, restart_lose, 0.8)
 
+def reset_countdown():
+    global start_time
+    start_time = pygame.time.get_ticks()+1
+
+reset_countdown()
 #main
 def main():
     run = True
     game_win = False
     while run:
         current_time = pygame.time.get_ticks()
-        time_remaining = max(0, countdown - current_time)
+        time_remaining = max(0, countdown - (current_time-start_time))
 
         #start
         if game_win == False and time_remaining > 0:
@@ -53,14 +59,14 @@ def main():
                     run = False
             if replay_win_button.draw(BG):
                 game_win = False
-                current_time = 1
+                reset_countdown()
         
         #lose
         if game_win == False and time_remaining == 0:
             lose_img.draw(BG)
             if restart_lose_button.draw(BG):
                 game_win = False
-                current_time = 1
+                reset_countdown()
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
