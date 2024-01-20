@@ -29,7 +29,7 @@ lose_img = images.Images(0, 0, lose, 0.8)
 #buttons
 exit_button = button.Button(630, 175, exit, 1.5)
 replay_win_button = button.Button(600, 550, replay_win, 0.8)
-restart_lose_button = button.Button(490, 715, restart_lose, 0.8)
+restart_lose_button = button.Button(460, 715, restart_lose, 0.8)
 
 def reset_countdown():
     global start_time
