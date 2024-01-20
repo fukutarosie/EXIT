@@ -12,6 +12,7 @@ BG = pygame.display.set_mode((1536, 864))
 background = pygame.image.load("assets/Background.png").convert_alpha()
 exit = pygame.image.load("assets/exit.png").convert_alpha()
 word = pygame.image.load("assets/word.png").convert_alpha()
+finger_cursor = pygame.image.load("assets/finger.png").convert_alpha()
 
 #backgrounds
 background_img = images.Images(0, 0, background, 0.8)
